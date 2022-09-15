@@ -2,7 +2,7 @@
   "name": "myflix-client",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.jsx",
+  "main": "src/index.js",
   "dependencies": {
     "abortcontroller-polyfill": "^1.7.3",
     "ansi-html": "^0.0.9",
@@ -207,5 +207,8 @@
   "bugs": {
     "url": "https://github.com/Timtam969/myFlix-client/issues"
   },
-  "homepage": "https://github.com/Timtam969/myFlix-client#readme"
+  "homepage": "https://github.com/Timtam969/myFlix-client#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-rc.0"
+  }
 }
