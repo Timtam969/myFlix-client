@@ -2,7 +2,7 @@
   "name": "myflix-client",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.html",
+  "main": "src/index.jsx",
   "dependencies": {
     "abortcontroller-polyfill": "^1.7.3",
     "ansi-html": "^0.0.9",
