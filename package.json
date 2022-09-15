@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/Timtam969/myFlix-client#readme",
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
     "parcel": "^2.7.0"
   }
 }
