@@ -28,6 +28,7 @@
     "@babel/generator": "^7.19.0",
     "@babel/parser": "^7.19.1",
     "@babel/traverse": "^7.19.1",
+    "@parcel/transformer-sass": "^2.7.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "parcel": "^2.7.0"
