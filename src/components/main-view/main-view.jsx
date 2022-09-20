@@ -1,5 +1,6 @@
 import React from 'react';
 import { MovieCard } from '../movie-card/movie-card';
+import { MovieView } from '../movie-card/movie-card';
 
 export class MainView extends React.Component {
   constructor() {
@@ -24,15 +25,18 @@ export class MainView extends React.Component {
           Description: 'desc3',
           ImagePath: '....'
         },
-      ]
+      ],
+      selectedMovie: null
     }
   }
 
   render() {
-    const { movies } = this.state;
+    const { movies, selectedMovie } = this.state;
+
+    if (selectedMovie) return <MovieView movie={selectedMovie} />;
 
     if (movies.length === 0)
-      return <div className='main-view'>The list is Empty</div>;
+      return <div className='main-view'>The list is Empty!</div>;
 
     return (
       <div className='main-view'>
