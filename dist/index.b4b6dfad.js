@@ -27272,8 +27272,7 @@ class MainView extends (0, _reactDefault.default).Component {
         }, this);
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "main-view",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+            children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                     movie: movie,
                     onMovieClick: (newSelectedMovie)=>{
                         this.setState({
@@ -27283,11 +27282,9 @@ class MainView extends (0, _reactDefault.default).Component {
                 }, movie._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 43,
-                    columnNumber: 9
-                }, this),
-                ")}"
-            ]
-        }, void 0, true, {
+                    columnNumber: 30
+                }, this))
+        }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 42,
             columnNumber: 7
