@@ -40,11 +40,9 @@ export class MainView extends React.Component {
 
     return (
       <div className='main-view'>
-        <button onClick={() => { alert('Nice!') }}>Click me!</button>
-        {movies.map(movie => <MovieCard key={movie._id} onMovieClick={(newSelectedMovie) => { this.state.selectedMovie = newSelectedMovie; }} />)}
+        {movies.map(movie => <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setState({ selectedMovie: newSelectedMovie }); }} />)}
       </div>
     );
   }
-}
 
 export default MainView;
