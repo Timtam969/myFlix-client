@@ -38,11 +38,12 @@ export class MainView extends React.Component {
   }
 
   componentDidMount() {
-    axios.get().then(response => {
-      this.setState({
-        movies: response.data
-      });
-    })
+    axios.get(
+      'https://myflixdatabase.herokuapp.com/movies').then(response => {
+        this.setState({
+          movies: response.data
+        });
+      })
       .catch(error => {
         console.log(error);
       });
