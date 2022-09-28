@@ -1,0 +1,22 @@
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  background: lightgray;
+  width: 95%;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.movie-img {
+  width: 95%;
+  border-radius: 1rem;
+  margin-left: .5rem;
+}
+
+.label {
+  font-size: 1.5rem;
+  font-family: fantasy;
+  font-weight: bolder;
+}
