@@ -16,10 +16,12 @@ export class MovieCard extends React.Component {
       <div className='movie-card justify-content-md-center'>
         <img className='movie-img' varient="top" src={movie.Image} />
         <Card.Body>
-          <Card.Title>Movie Title:</Card.Title>
-          <Card.Title>{movie.Title}</Card.Title>
-          <Card.Title>Movie Description:</Card.Title>
-          <Card.Text>{movie.Description}</Card.Text>
+          <div className='movie-title-lable'>Movie Title:</div>
+          <div className='movie-title-value'>{movie.Title}</div>
+          <br />
+          <div className='movie-desc-lable'>Movie Description:</div>
+          <div className='movie-desc-value'>{movie.Description}</div>
+          <br />
           <Button onClick={() => onMovieClick(movie)} varient="link">Open</Button>
         </Card.Body>
       </div>

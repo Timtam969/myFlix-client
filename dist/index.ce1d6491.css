@@ -5,22 +5,35 @@
   background: #d3d3d3;
   border-radius: 1.5rem;
   flex-direction: column;
+  align-items: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  padding: 1rem;
   display: flex;
+}
+
+.card-body {
+  text-align: center;
 }
 
 .movie-img {
   width: 95%;
   border-radius: 1rem;
-  margin-left: .5rem;
+  margin-top: .5rem;
 }
 
 .label {
   font-family: fantasy;
   font-size: 1.5rem;
   font-weight: bolder;
+}
+
+.movie-title-lable, .movie-desc-lable {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.movie-title-value, .movie-desc-value {
+  font-size: 1.25rem;
 }
 
 .container {
@@ -33,18 +46,25 @@
   border-radius: 2rem;
   flex-direction: column;
   align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding: 1rem;
   display: flex;
 }
 
-.image {
+.movie-poster {
   width: 70%;
+}
+
+.image {
+  width: 100%;
   border-radius: 2rem;
+  align-self: center;
   margin-top: 1rem;
-  margin-left: 6.5rem;
 }
 
 .label {
+  text-align: center;
   font-family: fantasy;
   font-size: 1.5rem;
   font-weight: bolder;
@@ -53,6 +73,18 @@
 .value {
   font-family: fantasy;
   font-size: 1.25rem;
+}
+
+.button {
+  width: 4rem;
+  height: 2rem;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 1rem;
+  padding: .375rem .75rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  display: inline-block;
 }
 
 

@@ -23,47 +23,56 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
-      <div className="movie-view justify-content-md-center">
+      <div className="movie-view">
         <div className="movie-poster">
           <img className="image" src={movie.Image} />
         </div>
         <br />
-        <div className="movie-title">
+        <div className="movie-title-label">
           <span className="label">Movie Title: </span>
-          <br />
+        </div>
+        <div className="movie-title-value">
           <span className="value">{movie.Title}</span>
         </div>
         <br />
-        <div className="movie-description">
+
+        <div className="movie-description-label">
           <span className="label">Movie Description: </span>
-          <br />
+        </div>
+        <div className="movie-description-value">
           <span className="value">{movie.Description}</span>
+
         </div>
         <br />
-        <div className="movie-genre-type">
+        <div className="movie-genre-type-label">
           <span className="label">Genre Type: </span>
-          <br />
+        </div>
+        <div className="movie-genre-type-value">
           <span className="value">{movie.Genre.Name}</span>
         </div>
         <br />
-        <div className="movie-genre-description">
+        <div className="movie-genre-description-label">
           <span className="label">Genre Description: </span>
-          <br />
+        </div>
+        <div className="movie-genre-description-value">
           <span className="value">{movie.Genre.Description}</span>
         </div>
         <br />
-        <div className="movie-director-name">
+        <div className="movie-director-name-label">
           <span className="label">Director Name: </span>
-          <br />
+        </div>
+        <div className="movie-director-name-value">
           <span className="value">{movie.Director.Name}</span>
         </div>
         <br />
-        <div className="movie-director-biography">
+        <div className="movie-director-biography-label">
           <span className="label">Director Biography: </span>
-          <br />
+        </div>
+        <div className="movie-director-biography-value">
           <span className="value">{movie.Director.Bio}</span>
         </div>
-        <button onClick={() => { onBackClick(null); }}>Back</button>
+        <br />
+        <button class='button' onClick={() => { onBackClick(null); }}>Back</button>
 
       </div>
     );

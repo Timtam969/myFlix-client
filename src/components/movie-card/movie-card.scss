@@ -1,22 +1,37 @@
 .movie-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
   background: lightgray;
   width: 95%;
-  padding: 1rem;
   border-radius: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
+.card-body {
+  text-align: center;
+}
+
 .movie-img {
   width: 95%;
   border-radius: 1rem;
-  margin-left: .5rem;
+  margin-top: 0.5rem;
 }
 
 .label {
   font-size: 1.5rem;
   font-family: fantasy;
   font-weight: bolder;
+}
+
+.movie-title-lable,
+.movie-desc-lable {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.movie-title-value,
+.movie-desc-value {
+  font-size: 1.25rem;
 }
