@@ -5959,7 +5959,7 @@ class MovieCard extends (0, _reactDefault.default).Component {
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
                     children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Title, {
                             children: "Movie Title:"
                         }, void 0, false, {
                             fileName: "src/components/movie-card/movie-card.jsx",
@@ -5973,7 +5973,7 @@ class MovieCard extends (0, _reactDefault.default).Component {
                             lineNumber: 20,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Title, {
                             children: "Movie Description:"
                         }, void 0, false, {
                             fileName: "src/components/movie-card/movie-card.jsx",

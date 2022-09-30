@@ -16,9 +16,9 @@ export class MovieCard extends React.Component {
       <div className='movie-card justify-content-md-center'>
         <img className='movie-img' varient="top" src={movie.Image} />
         <Card.Body>
-          <Card.Text>Movie Title:</Card.Text>
+          <Card.Title>Movie Title:</Card.Title>
           <Card.Title>{movie.Title}</Card.Title>
-          <Card.Text>Movie Description:</Card.Text>
+          <Card.Title>Movie Description:</Card.Title>
           <Card.Text>{movie.Description}</Card.Text>
           <Button onClick={() => onMovieClick(movie)} varient="link">Open</Button>
         </Card.Body>
