@@ -2,37 +2,104 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+import axios from 'axios';
+
 import './registration-view.scss';
+import { propTypes } from 'react-bootstrap/esm/Image';
+import PropTypes from 'prop-types';
 
 export function RegistrationView(props) {
+  const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
+  const [values, setValues] = useState({
+    nameErr: '',
+    usernameErr: '',
+    passwordErr: '',
+    emailErr: '',
+  });
+
+  const validate = () => {
+    let isReq = true;
+    if (!name) {
+      setValues({ ...values, nameErr: 'Name Required' });
+      isReq = false;
+    }
+    if (!username) {
+      setValues({ ...values, usernameErr: 'Username Required' });
+      isReq = false;
+    } else if (username.length < 5) {
+      setValues({ ...values, usernameErr: 'Username must be 5 characters long' });
+      isReq = false;
+    }
+    if (!password) {
+      setValues({ ...values, passwordErr: 'Password Required' });
+      isReq = false;
+    } else if (password.length < 6) {
+      setValues({ ...values, passwordErr: 'Password must ne 6 characters long' });
+      isReq = false;
+    }
+    if (!email) {
+      setValues({ ...values, emailErr: 'Email Address Required' });
+      isReq = false;
+    } else if (email.indexOf('@') === -1) {
+      setValues({ ...values, emailErr: 'Email must contain correct symbols' });
+      isReq = false;
+    }
+    return isReq;
+  }
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, email, birthday);
-    /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
-    props.onRegistration(username);
+    const isReq = validate();
+    if (isReq) {
+      axios.post('https://myflixdatabase.herokuapp.com/users', {
+        Name: name,
+        Username: username,
+        Password: password,
+        Email: email,
+        Birthday: birthday
+      })
+        .then(response => {
+          const data = response.data;
+          console.log(data);
+          alert('Registration successful, please Login!');
+          window.open('/', '_self');
+        })
+        .catch(response => {
+          console.log(response)
+          alert('unable to register');
+        });
+    }
   };
 
   return (
     <Form>
+      <Form.Group controlId="formName">
+        <Form.Label>Name:</Form.Label>
+        <Form.Control type="text" placeholder='Enter Name' value={name} onChange={e => setName(e.target.value)} />
+        {values.nameErr && <p>{values.nameErr}</p>}
+      </Form.Group>
+
       <Form.Group controlId="formUsername">
         <Form.Label>Username:</Form.Label>
-        <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+        <Form.Control type="text" placeholder='Enter Username' value={username} onChange={e => setUsername(e.target.value)} />
+        {values.usernameErr && <p>{values.usernameErr}</p>}
       </Form.Group>
 
       <Form.Group controlId="formPassword">
         <Form.Label>Password:</Form.Label>
-        <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+        <Form.Control type="password" placeholder='Enter Password' value={password} onChange={e => setPassword(e.target.value)} />
+        {values.passwordErr && <p>{values.passwordErr}</p>}
       </Form.Group>
 
       <Form.Group controlId="formEmail">
         <Form.Label>Email:</Form.Label>
-        <Form.Control type="text" onChange={e => setEmail(e.target.value)} />
+        <Form.Control type="text" placeholder='Enter Email' value={email} onChange={e => setEmail(e.target.value)} />
+        {values.emailErr && <p>{values.emailErr}</p>}
       </Form.Group>
 
       <Form.Group controlId="formBirthday">
@@ -42,4 +109,13 @@ export function RegistrationView(props) {
       <Button varient="primary" type="submit" onClick={handleSubmit}>Submit</Button>
     </Form>
   );
+}
+
+RegistrationView.proptypes = {
+  register: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    Username: PropTypes.string.isRequired,
+    Password: PropTypes.string.isRequired,
+    Email: PropTypes.string.isRequired
+  })
 }
