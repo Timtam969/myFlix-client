@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 import './movie-card.scss';
 import Card from 'react-bootstrap/card';
 import Row from 'react-bootstrap/Row';
@@ -10,7 +11,7 @@ import Col from 'react-bootstrap/Col';
 
 export class MovieCard extends React.Component {
   render() {
-    const { movie, onMovieClick } = this.props;
+    const { movie } = this.props;
 
     return (
       <div className='movie-card justify-content-md-center'>
@@ -22,18 +23,20 @@ export class MovieCard extends React.Component {
           <div className='movie-desc-lable'>Movie Description:</div>
           <div className='movie-desc-value'>{movie.Description}</div>
           <br />
-          <Button onClick={() => onMovieClick(movie)} varient="link">Open</Button>
+          <Link to={`/movies/${movie._id}`}>
+            <Button varient='link'>Open</Button>
+          </Link>
         </Card.Body>
       </div>
     );
   }
 }
 
-MovieCard.porpTypes = {
+MovieCard.propTypes = {
   movie: PropTypes.shape({
     Title: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
-    ImagePath: PropTypes.string.isRequired,
+    Image: PropTypes.string.isRequired,
     Genre: PropTypes.shape({
       Name: PropTypes.string.isRequired,
       Description: PropTypes.string.isRequired
@@ -43,5 +46,5 @@ MovieCard.porpTypes = {
       Bio: PropTypes.string.isRequired
     })
   }).isRequired,
-  onMovieClick: PropTypes.func.isRequired
+  // onMovieClick: PropTypes.func.isRequired
 };

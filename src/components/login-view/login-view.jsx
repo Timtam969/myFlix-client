@@ -31,7 +31,7 @@ export function LoginView(props) {
       isReq = false;
     }
     return isReq;
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,9 +48,9 @@ export function LoginView(props) {
         })
         .catch(e => {
           console.log('no such user')
-        });
+        })
     }
-  };
+  }
 
   return (
     <Form>
@@ -67,5 +67,5 @@ export function LoginView(props) {
       </Form.Group>
       <Button varient="primary" type="submit" onClick={handleSubmit}>Submit</Button>
     </Form>
-  );
+  )
 }

@@ -5,17 +5,14 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
 import './registration-view.scss';
-import { propTypes } from 'react-bootstrap/esm/Image';
 import PropTypes from 'prop-types';
 
 export function RegistrationView(props) {
-  const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
   const [values, setValues] = useState({
-    nameErr: '',
     usernameErr: '',
     passwordErr: '',
     emailErr: '',
@@ -23,10 +20,6 @@ export function RegistrationView(props) {
 
   const validate = () => {
     let isReq = true;
-    if (!name) {
-      setValues({ ...values, nameErr: 'Name Required' });
-      isReq = false;
-    }
     if (!username) {
       setValues({ ...values, usernameErr: 'Username Required' });
       isReq = false;
@@ -57,7 +50,6 @@ export function RegistrationView(props) {
     const isReq = validate();
     if (isReq) {
       axios.post('https://myflixdatabase.herokuapp.com/users', {
-        Name: name,
         Username: username,
         Password: password,
         Email: email,
@@ -78,12 +70,6 @@ export function RegistrationView(props) {
 
   return (
     <Form>
-      <Form.Group controlId="formName">
-        <Form.Label>Name:</Form.Label>
-        <Form.Control type="text" placeholder='Enter Name' value={name} onChange={e => setName(e.target.value)} />
-        {values.nameErr && <p>{values.nameErr}</p>}
-      </Form.Group>
-
       <Form.Group controlId="formUsername">
         <Form.Label>Username:</Form.Label>
         <Form.Control type="text" placeholder='Enter Username' value={username} onChange={e => setUsername(e.target.value)} />
@@ -113,7 +99,6 @@ export function RegistrationView(props) {
 
 RegistrationView.proptypes = {
   register: PropTypes.shape({
-    name: PropTypes.string.isRequired,
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
     Email: PropTypes.string.isRequired

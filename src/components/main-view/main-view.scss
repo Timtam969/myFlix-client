@@ -1,5 +1,25 @@
+.container {
+  border-radius: 3rem;
+  margin-top: 3rem;
+}
+
 .main-view {
+  display: flex;
   font-family: fantasy;
   background: #2b2b2b;
   width: 100%;
+}
+
+.logout {
+  font-size: 1.25rem;
+  width: 6rem;
+  height: 3rem;
+  margin: auto;
+  border-radius: 1rem;
+  display: inline-block;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.6rem 0.75rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
