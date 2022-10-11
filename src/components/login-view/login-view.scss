@@ -1,0 +1,42 @@
+ .container {
+   display: flex;
+   flex-direction: column;
+   //  height: 200rem;
+   width: 40rem;
+ }
+
+ .login-form {
+   display: flex;
+   flex-direction: column;
+   width: 40rem;
+   align-self: center;
+ }
+
+ p {
+   color: #fff;
+   font-size: 1.5rem;
+ }
+
+ label {
+   color: #fff;
+   font-size: 1.5rem;
+ }
+
+ input#formUsername {
+   font-size: 1.5rem;
+
+ }
+
+ input#formPassword {
+   font-size: 1.5rem;
+ }
+
+ .btn {
+   width: fit-content;
+
+ }
+
+ button.btn.btn-primary {
+   color: #2b2b2b;
+   background-color: lightgray;
+ }

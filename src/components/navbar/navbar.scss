@@ -1,0 +1,37 @@
+.menu-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+}
+
+.menu {
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+button.navbar-toggler {
+  color: white;
+  font-size: 2rem;
+
+}
+
+span.navbar-toggler-icon {
+  font-size: 3rem;
+}
+
+.navbar {
+  font-family: fantasy;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  align-self: flex-end;
+}
+
+a.nav-link {
+  color: white;
+}
+
+.navbar-logo {
+  font-size: 4rem;
+}

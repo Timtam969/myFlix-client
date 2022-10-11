@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -53,19 +54,22 @@ export function LoginView(props) {
   }
 
   return (
-    <Form>
-      <Form.Group controlId="formUsername">
-        <Form.Label>Username:</Form.Label>
-        <Form.Control type="text" placeholder='Enter Username' value={username} onChange={e => setUsername(e.target.value)} />
-        {usernameErr && <p>{usernameErr}</p>}
-      </Form.Group>
-
-      <Form.Group controlId="formPassword">
-        <Form.Label>Password:</Form.Label>
-        <Form.Control type="password" placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} />
-        {passwordErr && <p>{passwordErr}</p>}
-      </Form.Group>
-      <Button varient="primary" type="submit" onClick={handleSubmit}>Submit</Button>
-    </Form>
+    <Container>
+      <Form className='login-form'>
+        <Form.Group controlId="formUsername">
+          <Form.Label>Username:</Form.Label>
+          <Form.Control type="text" placeholder='Enter Username' value={username} onChange={e => setUsername(e.target.value)} />
+          {usernameErr && <p>{usernameErr}</p>}
+        </Form.Group>
+        <br />
+        <Form.Group controlId="formPassword">
+          <Form.Label>Password:</Form.Label>
+          <Form.Control type="password" placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} />
+          {passwordErr && <p>{passwordErr}</p>}
+        </Form.Group>
+        <br />
+        <Button varient="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+      </Form>
+    </Container>
   )
 }

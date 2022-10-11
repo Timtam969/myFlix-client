@@ -90,16 +90,51 @@ button.btn.btn-link {
   font-size: 1.75rem;
 }
 
-
-
 .container {
-  border-radius: 3rem;
-  margin-top: 3rem;
+  width: 40rem;
+  flex-direction: column;
+  display: flex;
+}
+
+.login-form {
+  width: 40rem;
+  flex-direction: column;
+  align-self: center;
+  display: flex;
+}
+
+p, label {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+input#formUsername, input#formPassword {
+  font-size: 1.5rem;
+}
+
+.btn {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+button.btn.btn-primary {
+  color: #2b2b2b;
+  background-color: #d3d3d3;
+}
+
+.app-container {
+  background-color: #2b2b2b;
+  background-size: cover;
+}
+
+.body, html {
+  height: 100%;
+  background-color: #2b2b2b;
+  align-content: center;
 }
 
 .main-view {
   width: 100%;
-  background: #2b2b2b;
   font-family: fantasy;
   display: flex;
 }
@@ -118,12 +153,13 @@ button.btn.btn-link {
   display: inline-block;
 }
 
-
+p, label {
+  color: #fff;
+}
 
 .card-body {
   background-color: #d3d3d3;
   border-radius: 3rem;
-  margin: 3rem;
 }
 
 .genre-title-lable, .genre-desc-lable {
@@ -148,6 +184,52 @@ button.btn.btn-link {
 .dir-name-value, .dir-bir-value, .dir-bio-value {
   margin: auto;
   font-size: 2rem;
+}
+
+.menu-head {
+  justify-content: baseline;
+  flex-direction: row;
+  display: flex;
+}
+
+.menu {
+  flex-direction: column;
+  margin-left: 3rem;
+  display: flex;
+}
+
+button.navbar-toggler {
+  color: #fff;
+  font-size: 2rem;
+}
+
+span.navbar-toggler-icon {
+  font-size: 3rem;
+}
+
+.navbar {
+  color: #fff;
+  align-self: flex-end;
+  margin-bottom: 1rem;
+  font-family: fantasy;
+  font-size: 1.5rem;
+}
+
+a.nav-link {
+  color: #fff;
+}
+
+.navbar-logo {
+  font-size: 4rem;
+}
+
+figure.figure {
+  width: 30rem;
+}
+
+img {
+  width: 30rem;
+  border-radius: 2rem;
 }
 
 /*# sourceMappingURL=index.ce1d6491.css.map */
