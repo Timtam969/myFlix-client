@@ -44,22 +44,24 @@ function UpdateUser({ user, onDeleteUser, props }) {
 
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const Username = localStorage.getItem("user");
-    const token = localStorage.getItem("token");
-    axios.put(`https://myflixdatabase.herokuapp.com/users/${Username}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((response) => {
-        setUser(response.data);
-        alert('User Update successful!');
-        window.open('/', '_self');
+    const isReq = validate();
+    if (isReq) {
+      e.preventDefault();
+      const Username = localStorage.getItem("user");
+      const token = localStorage.getItem("token");
+      axios.put(`https://myflixdatabase.herokuapp.com/users/${Username}`, {
+        headers: { Authorization: `Bearer ${token}` },
       })
-      .catch(response => {
-        console.log(response)
-        alert('unable to Update');
-      });
-
+        .then((response) => {
+          setUser(response.data);
+          alert('User Update successful!');
+          window.open('/', '_self');
+        })
+        .catch(response => {
+          console.log(response)
+          alert('unable to Update');
+        });
+    }
   };
 
 
