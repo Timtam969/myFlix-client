@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Figure, Button, Card } from "react-bootstrap";
 import "./profile-view.scss";
 
-function FavoriteMovies({ favoriteMovieList }) {
+function FavoriteMovies({ favoriteMovieList, onRemoveFavorite }) {
 
   return (
     <Card className="mb-3">
@@ -16,16 +16,15 @@ function FavoriteMovies({ favoriteMovieList }) {
         <Row>
           {favoriteMovieList.map((movie) => {
             return (
-              <div key={movie._id}>
+              <Col sm={12} md={6} lg={6} key={`fav-${movie._id}`} >
                 <Figure>
-                  <img src={movie.Image} />
-                  <Link to={`/movies/${movie._id}`}>
-                  </Link>
-
+                  <img src={movie.Image} alt={movie.Title} />
                 </Figure>
-                <h2>{movie.Title}</h2>
-                <Button variant="danger" onClick={() => removeFavorite(movie._id)}>Remove</Button>
-              </div>
+                <Link to={`/movies/${movie._id}`}>
+                  <h3>{movie.Title}</h3>
+                </Link>
+                <Button variant="danger" className='remove' onClick={() => onRemoveFavorite(movie._id)}>Remove</Button>
+              </Col>
             )
           })}
         </Row>

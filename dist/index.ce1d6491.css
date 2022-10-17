@@ -35,6 +35,15 @@
   font-size: 1.25rem;
 }
 
+button.favMovButt.btn.btn-primary {
+  background-color: #98fb98;
+  margin-top: .5rem;
+}
+
+button.open.btn.btn-primary {
+  background-color: #afeeee;
+}
+
 .container {
   width: 90%;
   justify-content: center;
@@ -79,6 +88,7 @@
   color: #212529;
   text-align: center;
   vertical-align: middle;
+  background-color: #b0c4de;
   border-radius: 1rem;
   padding: .375rem .75rem;
   font-size: 1.25rem;
@@ -119,7 +129,8 @@ input#formUsername, input#formPassword {
 
 button.btn.btn-primary {
   color: #2b2b2b;
-  background-color: #d3d3d3;
+  background-color: #b0c4de;
+  border-radius: 1rem;
 }
 
 .app-container {
@@ -223,13 +234,26 @@ a.nav-link {
   font-size: 4rem;
 }
 
+.mb-3.card {
+  border-radius: 3rem;
+}
+
 figure.figure {
   width: 30rem;
 }
 
 img {
-  width: 30rem;
+  width: 20rem;
   border-radius: 2rem;
+}
+
+.row {
+  justify-content: center;
+  display: flex;
+}
+
+button.delete-button.btn.btn-danger, button.remove.btn.btn-danger {
+  border-radius: 1rem;
 }
 
 /*# sourceMappingURL=index.ce1d6491.css.map */

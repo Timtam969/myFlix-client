@@ -1,8 +1,26 @@
+.mb-3.card {
+  border-radius: 3rem;
+}
+
 figure.figure {
   width: 30rem;
 }
 
 img {
-  width: 30rem;
+  width: 20rem;
   border-radius: 2rem;
+}
+
+.row {
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+}
+
+button.delete-button.btn.btn-danger {
+  border-radius: 1rem;
+}
+
+button.remove.btn.btn-danger {
+  border-radius: 1rem;
 }

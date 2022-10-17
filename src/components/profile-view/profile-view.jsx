@@ -14,36 +14,39 @@ export function ProfileView({
   movies,
   movie,
   onUpdatedUser,
-  // onBackClick,
-  // onDeleteUser,
 }) {
   const [user, setUser] = useState();
   const [favoriteMovies, setFavoriteMovies] = useState([]);
   const Username = localStorage.getItem("user");
   const token = localStorage.getItem("token");
 
-
-
   const getUser = () => {
     axios
-      .get(`https://myflixdatabase.herokuapp.com/users/${Username}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get(
+        `https://myflixdatabase.herokuapp.com/users/${Username}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        })
       .then((response) => {
         setUser(response.data);
+        console.log(response);
         setFavoriteMovies(
           movies.filter((movie) =>
             response.data.FavoriteMovies.includes(movie._id)
           )
         );
       })
-      .catch((error) => console.error(error));
-  }
+      .catch((error) => console.error(error))
+  };
 
-  const removeFavorite = (movies) => {
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  const removeFavorite = (movieID) => {
     axios
       .delete(
-        `https://myflixdatabase.herokuapp.com/users/${Username}/movies/${movie._id}`,
+        `https://myflixdatabase.herokuapp.com/users/${Username}/movies/${movieID}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -59,6 +62,7 @@ export function ProfileView({
       .catch((error) => console.error(error));
   };
 
+
   const onDeleteUser = () => {
     const Username = localStorage.getItem("user");
     const token = localStorage.getItem("token");
@@ -72,7 +76,7 @@ export function ProfileView({
         alert("Profile has been deleted!");
         localStorage.removeItem("user");
         localStorage.removeItem("token");
-        window.open(`/`, "_self");
+        window.open(`/users/${Username}`, "_self");
       })
       .catch(function (error) {
         console.log(error);
@@ -80,12 +84,6 @@ export function ProfileView({
   }
 
 
-
-
-
-  useEffect(() => {
-    getUser();
-  }, []);
 
   return (
     <Container>
@@ -109,7 +107,7 @@ export function ProfileView({
           </Row>
           <FavoriteMovies
             favoriteMovieList={favoriteMovies}
-            onRemoveFavorite={(movie) => removeFavorite(movie._id)}
+            onRemoveFavorite={(movieID) => removeFavorite(movieID)}
           />
           <Link to='/'>
             <Button varient='link'>Back</Button>

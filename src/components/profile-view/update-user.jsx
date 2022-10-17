@@ -3,65 +3,43 @@ import { Form, Button, Card, CardGroup, Container, Col, Row } from "react-bootst
 import axios from "axios";
 import PropTypes from 'prop-types';
 
-function UpdateUser({ user, onDeleteUser, props }) {
+function UpdateUser({ user, onDeleteUser }) {
   const Username = localStorage.getItem("user");
   const token = localStorage.getItem("token");
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState(user.Username);
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState('');
-  const [birthday, setBirthday] = useState('');
-  const [values, setValues] = useState({
-    usernameErr: '',
-    passwordErr: '',
-    emailErr: '',
-  });
+  const [email, setEmail] = useState(user.Email);
+  const [birthday, setBirthday] = useState(user.Birthday);
 
-  const validate = () => {
-    let isReq = true;
-    if (!username) {
-      setValues({ ...values, usernameErr: 'Username Required' });
-      isReq = false;
-    } else if (username.length < 5) {
-      setValues({ ...values, usernameErr: 'Username must be 5 characters long' });
-      isReq = false;
-    }
-    if (!password) {
-      setValues({ ...values, passwordErr: 'Password Required' });
-      isReq = false;
-    } else if (password.length < 6) {
-      setValues({ ...values, passwordErr: 'Password must ne 6 characters long' });
-      isReq = false;
-    }
-    if (!email) {
-      setValues({ ...values, emailErr: 'Email Address Required' });
-      isReq = false;
-    } else if (email.indexOf('@') === -1) {
-      setValues({ ...values, emailErr: 'Email must contain correct symbols' });
-      isReq = false;
-    }
-    return isReq;
-  }
 
 
   const handleSubmit = (e) => {
-    const isReq = validate();
-    if (isReq) {
-      e.preventDefault();
-      const Username = localStorage.getItem("user");
-      const token = localStorage.getItem("token");
-      axios.put(`https://myflixdatabase.herokuapp.com/users/${Username}`, {
-        headers: { Authorization: `Bearer ${token}` },
+    e.preventDefault();
+    axios
+      .put(
+        `https://myflixdatabase.herokuapp.com/users/${Username}`,
+        {
+          Username: username,
+          Password: password,
+          Email: email,
+          Birthday: birthday,
+        },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((response) => {
+        const data = response.data;
+        console.log(data);
+        console.log(Username);
+        alert("Profile was successfully updated");
+        localStorage.setItem("user", username);
+        // localStorage.clear();
+        window.open('/users/:Username', "_self");
       })
-        .then((response) => {
-          setUser(response.data);
-          alert('User Update successful!');
-          window.open('/', '_self');
-        })
-        .catch(response => {
-          console.log(response)
-          alert('unable to Update');
-        });
-    }
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
 
