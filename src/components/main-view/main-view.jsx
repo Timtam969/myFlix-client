@@ -11,7 +11,6 @@ import MoviesList from '../movie-list/movie-list';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { NavBar } from "../navbar/navbar";
-// import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
@@ -24,10 +23,7 @@ import './main-view.scss';
 class MainView extends React.Component {
   constructor() {
     super();
-    // this.state = {
-    //   // movies: [],
-    //   user: null,
-    // };
+
   }
 
   componentDidMount() {
