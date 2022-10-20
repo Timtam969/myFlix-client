@@ -16,7 +16,7 @@ function FavoriteMovies({ favoriteMovieList, onRemoveFavorite }) {
         <Row>
           {favoriteMovieList.map((movie) => {
             return (
-              <Col sm={12} md={6} lg={6} key={`fav-${movie._id}`} >
+              <Col sm={12} md={12} lg={6} key={`fav-${movie._id}`} >
                 <Figure>
                   <img src={movie.Image} alt={movie.Title} />
                 </Figure>

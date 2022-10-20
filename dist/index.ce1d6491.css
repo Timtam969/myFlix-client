@@ -1,49 +1,5 @@
 
 
-.movie-card {
-  width: 95%;
-  background: #d3d3d3;
-  border-radius: 1.5rem;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
-  display: flex;
-}
-
-.card-body {
-  text-align: center;
-}
-
-.movie-img {
-  width: 95%;
-  border-radius: 1rem;
-  margin-top: .5rem;
-}
-
-.label {
-  font-family: fantasy;
-  font-size: 1.5rem;
-  font-weight: bolder;
-}
-
-.movie-title-lable, .movie-desc-lable {
-  font-size: 1.5rem;
-  font-weight: bolder;
-}
-
-.movie-title-value, .movie-desc-value {
-  font-size: 1.25rem;
-}
-
-button.favMovButt.btn.btn-primary {
-  background-color: #98fb98;
-  margin-top: .5rem;
-}
-
-button.open.btn.btn-primary {
-  background-color: #afeeee;
-}
-
 .container {
   width: 90%;
   justify-content: center;
@@ -128,9 +84,16 @@ input#formUsername, input#formPassword {
 }
 
 button.btn.btn-primary {
+  height: 2.5rem;
   color: #2b2b2b;
+  text-align: center;
+  vertical-align: middle;
   background-color: #b0c4de;
   border-radius: 1rem;
+  padding: .375rem .75rem;
+  font-size: 1.25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  display: inline-block;
 }
 
 .app-container {
@@ -162,6 +125,12 @@ button.btn.btn-primary {
   font-size: 1.25rem;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   display: inline-block;
+}
+
+input.form-control {
+  width: 50%;
+  text-align: center;
+  margin: auto;
 }
 
 p, label {
@@ -240,6 +209,7 @@ a.nav-link {
 
 figure.figure {
   width: 30rem;
+  margin-top: 1rem;
 }
 
 img {
@@ -252,8 +222,95 @@ img {
   display: flex;
 }
 
-button.delete-button.btn.btn-danger, button.remove.btn.btn-danger {
+button.delete-button.btn.btn-danger {
+  height: 2.5rem;
+  color: #2b2b2b;
+  text-align: center;
+  vertical-align: middle;
   border-radius: 1rem;
+  margin-left: 1rem;
+  padding: .375rem .75rem;
+  font-size: 1.25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  display: inline-block;
+}
+
+button.remove.btn.btn-danger {
+  height: 2.5rem;
+  color: #2b2b2b;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 1rem;
+  padding: .375rem .75rem;
+  font-size: 1.25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  display: inline-block;
+}
+
+p, label.form-label {
+  color: #2b2b2b;
+}
+
+.movie-card {
+  width: 95%;
+  background: #d3d3d3;
+  border-radius: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  display: flex;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.movie-img {
+  width: 95%;
+  border-radius: 1rem;
+  margin-top: .5rem;
+}
+
+.label {
+  font-family: fantasy;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.movie-title-lable, .movie-desc-lable {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.movie-title-value, .movie-desc-value {
+  font-size: 1.25rem;
+}
+
+button.favMovButt.btn.btn-primary {
+  height: auto;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #98fb98;
+  border-radius: 1rem;
+  margin-top: .5rem;
+  padding: .375rem .75rem;
+  font-size: 1.25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  display: inline-block;
+}
+
+button.open.btn.btn-primary {
+  height: auto;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #afeeee;
+  border-radius: 1rem;
+  padding: .375rem .75rem;
+  font-size: 1.25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  display: inline-block;
 }
 
 /*# sourceMappingURL=index.ce1d6491.css.map */

@@ -4,6 +4,7 @@
 
 figure.figure {
   width: 30rem;
+  margin-top: 1rem;
 }
 
 img {
@@ -13,14 +14,38 @@ img {
 
 .row {
   display: flex;
-  // align-items: center;
   justify-content: center;
 }
 
 button.delete-button.btn.btn-danger {
+  font-size: 1.25rem;
+  height: 2.5rem;
   border-radius: 1rem;
+  display: inline-block;
+  color: #2b2b2b;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.375rem 0.75rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  margin-left: 1rem;
 }
 
 button.remove.btn.btn-danger {
+  font-size: 1.25rem;
+  height: 2.5rem;
   border-radius: 1rem;
+  display: inline-block;
+  color: #2b2b2b;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.375rem 0.75rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+p {
+  color: #2b2b2b;
+}
+
+label.form-label {
+  color: #2b2b2b;
 }
