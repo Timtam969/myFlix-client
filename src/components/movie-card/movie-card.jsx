@@ -27,7 +27,7 @@ export class MovieCard extends React.Component {
         }
       )
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         alert("movie added");
       })
       .catch((error) => console.error(error));

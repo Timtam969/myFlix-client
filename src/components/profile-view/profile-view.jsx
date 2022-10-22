@@ -29,7 +29,7 @@ export function ProfileView({
         })
       .then((response) => {
         setUser(response.data);
-        console.log(response);
+        // console.log(response);
         setFavoriteMovies(
           movies.filter((movie) =>
             response.data.FavoriteMovies.includes(movie._id)
@@ -72,7 +72,7 @@ export function ProfileView({
       })
       .then((response) => {
         setUser(response.data);
-        console.log(response);
+        // console.log(response);
         alert("Profile has been deleted!");
         localStorage.removeItem("user");
         localStorage.removeItem("token");

@@ -57,12 +57,12 @@ export function RegistrationView(props) {
       })
         .then(response => {
           const data = response.data;
-          console.log(data);
+          // console.log(data);
           alert('Registration successful, please Login!');
           window.open('/', '_self');
         })
         .catch(response => {
-          console.log(response)
+          // console.log(response)
           alert('unable to register');
         });
     }

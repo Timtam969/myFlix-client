@@ -30,8 +30,8 @@ function UpdateUser({ user, onDeleteUser }) {
       )
       .then((response) => {
         const data = response.data;
-        console.log(data);
-        console.log(Username);
+        // console.log(data);
+        // console.log(Username);
         alert("Profile was successfully updated");
         localStorage.setItem("user", username);
         // localStorage.clear();

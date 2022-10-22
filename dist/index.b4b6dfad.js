@@ -14304,11 +14304,11 @@ function RegistrationView(props) {
             Birthday: birthday
         }).then((response)=>{
             const data = response.data;
-            console.log(data);
+            // console.log(data);
             alert("Registration successful, please Login!");
             window.open("/", "_self");
         }).catch((response)=>{
-            console.log(response);
+            // console.log(response)
             alert("unable to register");
         });
     };
@@ -40465,7 +40465,7 @@ function ProfileView({ movies , movie , onUpdatedUser ,  }) {
             }
         }).then((response)=>{
             setUser(response.data);
-            console.log(response);
+            // console.log(response);
             setFavoriteMovies(movies.filter((movie)=>response.data.FavoriteMovies.includes(movie._id)));
         }).catch((error)=>console.error(error));
     };
@@ -40491,7 +40491,7 @@ function ProfileView({ movies , movie , onUpdatedUser ,  }) {
             }
         }).then((response)=>{
             setUser(response.data);
-            console.log(response);
+            // console.log(response);
             alert("Profile has been deleted!");
             localStorage.removeItem("user");
             localStorage.removeItem("token");
@@ -40837,8 +40837,8 @@ function UpdateUser({ user , onDeleteUser  }) {
             }
         }).then((response)=>{
             const data = response.data;
-            console.log(data);
-            console.log(Username);
+            // console.log(data);
+            // console.log(Username);
             alert("Profile was successfully updated");
             localStorage.setItem("user", username);
             // localStorage.clear();
@@ -42687,7 +42687,7 @@ class MovieCard extends (0, _reactDefault.default).Component {
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>{
-            console.log(response);
+            // console.log(response);
             alert("movie added");
         }).catch((error)=>console.error(error));
     }
