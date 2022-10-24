@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { Button, Card, Container, Row, Col } from "react-bootstrap";
 
@@ -14,11 +15,13 @@ export function ProfileView({
   movies,
   movie,
   onUpdatedUser,
+  onBackClick,
 }) {
   const [user, setUser] = useState();
   const [favoriteMovies, setFavoriteMovies] = useState([]);
   const Username = localStorage.getItem("user");
   const token = localStorage.getItem("token");
+
 
   const getUser = () => {
     axios
