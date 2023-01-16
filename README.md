@@ -20,5 +20,11 @@ Creating a backend API to store information about movies and allow users to crea
 - Executing program
 
 ### Documentation
-For a list of endpoints and responses check out the documentation.html
-
+#### User Experience
+- A user can sign up and search for all movies listed on the database
+- A user can view individual movies
+- A user can add their favorite movies to their profile
+- A user can delete movies from their profile
+- A user can view the synopsis of a movie
+- A user can view the genre of a movie
+- A user can view the Directors information 
